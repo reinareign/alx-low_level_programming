@@ -5,27 +5,24 @@
  * @accept: input
  * Return: Always 0 (Success)
  */
-
 unsigned int _strspn(char *s, char *accept)
 {
-
-	unsigned int _strspn(char *s, char *accept);
-	unsigned int d = 0;
-	int d;
+	unsigned int n = 0;
+	int r;
 
 	while (*s)
 	{
-	for (d = 0; accept[d]; d++)
-	{
-	if (*s == accept[d])
-	{
-	d++;
-	break;
+		for (r = 0; accept[r]; r++)
+		{
+			if (*s == accept[r])
+			{
+				n++;
+				break;
+			}
+			else if (accept[r + 1] == '\0')
+				return (n);
+		}
+		s++;
 	}
-	else if (accept[d + 1] == '\0')
-	return (d);
-	}
-	s++;
-	}
-	return (d);
+	return (n);
 }
