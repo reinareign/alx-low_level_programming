@@ -11,7 +11,6 @@ void print_all(const char * const format, ...)
 {
 	int i = 0;
 	char *str, *sep = "";
-
 	va_list list;
 
 	va_start(list, format);
@@ -44,8 +43,7 @@ void print_all(const char * const format, ...)
 			sep = ", ";
 			i++;
 		}
-	}	
-
+	}
 	printf("\n");
 	va_end(list);
 }
